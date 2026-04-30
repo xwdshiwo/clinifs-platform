@@ -65,7 +65,7 @@ with st.sidebar:
     st.divider()
     st.caption(
         "⚠️ GA / BPSO require 30–120 s per fit and are not available here. "
-        "Install [clinifs](https://pypi.org/project/clinifs/) and run locally."
+        "Install [clinifs](https://github.com/xwdshiwo/clinifs) and run locally."
     )
 
 # ─── File upload ─────────────────────────────────────────────────────────────
