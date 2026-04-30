@@ -4,7 +4,7 @@ Interactive Streamlit application accompanying the paper:
 
 > *Multi-dimensional benchmarking of feature selection methods for clinical small-panel cancer gene-expression classification*, Briefings in Bioinformatics, 2026.
 
-**Public URL**: https://clinifs.streamlit.app *(deployed; replace with actual URL after deployment)*  
+**Public URL**: https://clinifs-platform.streamlit.app/  
 **Source**: `platform/app/`
 
 ---
