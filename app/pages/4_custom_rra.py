@@ -114,13 +114,16 @@ st.subheader("2 · Run")
 if st.button("▶ Run Custom RRA", type="primary"):
     from clinifs import RankAggregateFilter
 
-    with st.spinner(f"Running RRA({', '.join(selected_methods_run)}, k={k})…"):
+    effective_k = min(k, n_f)
+    if effective_k < k:
+        st.warning(f"Requested k={k} exceeds n_features={n_f}; using k={effective_k}.")
+    with st.spinner(f"Running RRA({', '.join(selected_methods_run)}, k={effective_k})…"):
         try:
             extra = {"mel": mel_scores} if mel_scores is not None else None
             with warnings.catch_warnings(record=True) as caught:
                 warnings.simplefilter("always")
                 rra = RankAggregateFilter(
-                    methods=selected_methods_run, k=k
+                    methods=selected_methods_run, k=effective_k
                 )
                 rra.fit(X, y, extra_scores=extra)
             for w in caught:
@@ -164,8 +167,9 @@ if st.button("▶ Run Custom RRA", type="primary"):
     st.download_button(
         "⬇ Download panel CSV",
         data=csv_bytes,
-        file_name=f"clinifs_rra_k{k}.csv",
+        file_name=f"clinifs_rra_k{effective_k}.csv",
         mime="text/csv",
+        on_click="ignore",
     )
 
     # ── ρ-score distribution ────────────────────────────────────────────

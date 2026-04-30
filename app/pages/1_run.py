@@ -134,11 +134,14 @@ if st.button("▶ Run Feature Selection", type="primary"):
     from clinifs import FeatureSelector
 
     method_key = _METHOD_KEY[method]
+    effective_k = min(k, n_features)
+    if effective_k < k:
+        st.warning(f"Requested k={k} exceeds n_features={n_features}; using k={effective_k}.")
     with st.spinner(f"Running {method} (k={k})…"):
         try:
             with warnings.catch_warnings(record=True) as caught:
                 warnings.simplefilter("always")
-                fs = FeatureSelector(method=method_key, k=k)
+                fs = FeatureSelector(method=method_key, k=effective_k)
                 fs.fit(X, y)
             for w in caught:
                 st.warning(str(w.message))
@@ -187,6 +190,7 @@ if st.button("▶ Run Feature Selection", type="primary"):
     st.download_button(
         "⬇ Download panel CSV",
         data=csv_bytes,
-        file_name=f"clinifs_panel_k{k}_{method_key}.csv",
+        file_name=f"clinifs_panel_k{effective_k}_{method_key}.csv",
         mime="text/csv",
+        on_click="ignore",
     )
