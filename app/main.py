@@ -19,10 +19,12 @@ st.set_page_config(
 )
 
 pages = [
-    st.Page("pages/1_run.py",       title="Run Analysis",       icon="🔬"),
-    st.Page("pages/2_browse.py",    title="Browse Results",     icon="📊"),
-    st.Page("pages/3_recommend.py", title="Get Recommendation", icon="🎯"),
-    st.Page("pages/4_custom_rra.py",title="Custom RRA",         icon="⚙️"),
+    st.Page("pages/1_run.py",       title="Online Analysis / 在线分析",        icon="🔬"),
+    st.Page("pages/2_browse.py",    title="Benchmark Results / 基准结果",      icon="📊"),
+    st.Page("pages/3_recommend.py", title="Method Guide / 方法指南",           icon="🎯"),
+    st.Page("pages/4_custom_rra.py",title="RRA & Gene Panel / RRA 与基因面板", icon="⚙️"),
+    st.Page("pages/5_help.py",      title="Help / 帮助",                      icon="❓"),
+    st.Page("pages/6_contact.py",   title="Contact / 联系我们",               icon="📬"),
 ]
 
 pg = st.navigation(pages)

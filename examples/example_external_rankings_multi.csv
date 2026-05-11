@@ -1,0 +1,11 @@
+gene,external_method_rank,external_method_score
+TP53,1,0.98
+BRCA1,2,0.92
+EGFR,3,0.91
+PIK3CA,4,0.88
+PTEN,5,0.86
+MKI67,6,0.83
+TOP2A,7,0.81
+ERBB2,8,0.79
+CD274,9,0.74
+VEGFA,10,0.72
