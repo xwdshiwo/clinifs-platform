@@ -18,7 +18,7 @@ cd 2026-04-30_1100_final_submission_package/platform
 git init
 git add .
 git commit -m "Initial clinifs web platform (v0.1.0)"
-git remote add origin https://github.com/<user>/clinifs-platform.git
+git remote add origin https://github.com/xwdshiwo/clinifs-platform.git
 git push -u origin main
 ```
 
@@ -28,7 +28,7 @@ git push -u origin main
 
 1. Go to **https://share.streamlit.io** and sign in with your GitHub account.
 2. Click **"New app"**.
-3. Select the repository: `<user>/clinifs-platform`
+3. Select the repository: `xwdshiwo/clinifs-platform`
 4. Set **Branch**: `main`
 5. Set **Main file path**: `app/main.py`
 6. (Optional) Set **App URL**: request `clinifs` as subdomain → `https://clinifs.streamlit.app`
